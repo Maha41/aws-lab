@@ -1,0 +1,12 @@
+Parameters: 
+  BucketName: 
+    Type: String
+    Description: 'Please provide the bucket name'
+Resources:
+  PsBucket:
+    Type: 'AWS::S3::Bucket'
+    Properties:
+      BucketName: !Join 
+        - '-'
+        - - !Ref 'BucketName'
+          - !Ref 'AWS::AccountId'

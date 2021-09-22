@@ -1,0 +1,12 @@
+Parameters: 
+  SNSTopicName: 
+    Type: String
+    Description: 'Please provide the topic name'
+Resources: 
+  PsSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      Subscription:
+        - Endpoint: ps@email.com
+          Protocol: "email"
+      TopicName: !Ref 'SNSTopicName'

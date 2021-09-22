@@ -1,0 +1,9 @@
+Parameters: 
+  QName: 
+    Type: String
+    Description: 'Please provide the queue name'
+Resources: 
+  PsQueue: 
+    Type: AWS::SQS::Queue
+    Properties: 
+      QueueName: !Ref 'QName'
